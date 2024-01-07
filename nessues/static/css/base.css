@@ -1,0 +1,638 @@
+
+html,
+body{
+    font-family: 'Raleway';
+    background-color: #FAAD41;
+    height: 95%;
+    width: 100%;
+}
+
+a{
+    text-decoration: none; 
+    color: inherit;
+}
+
+#right{
+    position: fixed;
+    top: 0%;
+    right: 0%;
+}
+#left{
+    position: fixed;
+    bottom: 0%;
+    left: 0%;
+}
+
+/* navbar */
+
+/* bases */
+.container-fluid.home{
+    position: relative;
+    background: #ffffff;
+    box-shadow: 6px 5px 4px rgba(0, 0, 0, 0.13);
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    width: 90%;
+    height: 97.5%;
+    /* height: 97.5%; - without defined height container will be adaptive for the content quantity */
+    margin-top: 3%;
+}
+.container-fluid.account{
+    background: #ffffff;
+    box-shadow: 6px 5px 4px rgba(0, 0, 0, 0.13);
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    width: 30%;
+    height: 95%;
+    margin-top: 3.5%;
+}
+.container-fluid.authentication{
+    background: #ffffff;
+    box-shadow: 6px 5px 4px rgba(0, 0, 0, 0.13);
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    width: 30%;
+    height: 70%;
+    margin-top: 3.5%;
+}
+.container-data-auth{
+    padding: 30px;
+}
+.container-data{
+    padding-inline: 30px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+/* home */
+.container-home-data{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    text-align: center;
+    
+    margin-top: 5%;
+    padding-inline: 15%;
+}
+.slogan-block{
+    text-align: left;
+}
+.slogan{
+    font-size: 56px;
+    font-weight: bold;
+}
+.platform-info{
+    font-size: 20px;
+    font-weight: lighter;
+}
+.btn-login{
+    margin-right: 5px;
+}
+.btn-register{
+    margin-left: 5px;
+}
+.btn-login{
+    border: none;
+    border-radius: 10px;
+    font-weight: lighter;
+    background-color: #FD6600;
+    padding-inline: 20px;
+}
+.btn-register{
+    color: #FD6600;
+    border: 1px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #FD6600;
+    background-color: #ffffff;
+    padding-inline: 20px;
+}
+.btn-login:hover{
+    color: #FD6600;
+    border: 1px;
+    border-style: solid;
+    border-color: #FD6600;
+    background-color: #ffffff;
+}
+.btn-register:hover{
+    border: none;
+    border-radius: 10px;
+    font-weight: lighter;
+    background-color: #FD6600;
+}
+
+/* account */
+.account-page{
+    text-align: center;
+}
+.account-links{
+    display: flex;
+    justify-content: space-between;
+}
+.account-image{
+    margin-top: 50%;
+}
+.account-username{
+    margin-top: 10%;
+}
+.account-gr-links{
+    margin-top: 10%;
+}
+.account-statistics{
+    margin-top: 35%;
+}
+
+/* rooms */
+.workspace-nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin-top: 2.5%;
+    margin-right: 18%;
+    margin-bottom: -1%;
+    padding-inline: 15%;
+}
+.inviteUser:hover, .deleteRoom:hover{
+    cursor: pointer;
+}
+.availability{
+    flex-grow: 4;
+}
+.container-monorooms-data{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    text-align: center;
+    gap: 10%;
+    
+    margin-right: 30%;
+    padding-inline: 15%;
+}
+.data_cubes{
+    text-align: left;
+    padding-top: 2%;
+    padding-left: 5%;
+    padding-bottom: 10%;
+    cursor: pointer;
+
+    background: #FAAD41; 
+    border-radius: 2px;
+    width: 100%;
+    height: 100%;
+}
+.data_cubes.new_room{
+    background-color: #F0F2F5;
+    text-align: center;
+    padding-top: 10%;
+    padding-left: 0%;
+    padding-bottom: 2%;
+}
+.data_cubes.new_room:hover{
+    background-color: #E7E9ED;
+}
+.create_new_room-text{
+    font-size: 14px;
+    font-weight: lighter;
+    color: #434343;
+}
+.create_room_modal{
+    display: none;
+}
+
+/* groups */
+.container-groups-data{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    text-align: center;
+    gap: 10%;
+    
+    margin-right: 30%;
+    padding-inline: 15%;
+}
+/* .group-name{} */
+.data_cubes.groups{
+    text-align: left;
+    padding-top: 2%;
+    padding-left: 5%;
+    padding-bottom: 5%;
+    cursor: pointer;
+
+    background: #FAAD41; 
+    border-radius: 2px;
+    width: 100%;
+    height: 100%;
+}
+.group-role{
+    text-align: right;
+    margin-right: 5%;
+
+    font-size: 14px;
+    font-weight: lighter;
+    color: #434343;
+}
+.create_group_modal{
+    display: none;
+}
+.data_cubes.new_group{
+    background-color: #F0F2F5;
+    text-align: center;
+    padding-top: 10%;
+    padding-left: 0%;
+    padding-bottom: 2%;
+}
+.create_new_group-text{
+    font-size: 14px;
+    font-weight: lighter;
+    color: #434343;
+}
+
+/* tables */
+.container-tables-data{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    text-align: center;
+    gap: 10%;
+    
+    margin-right: 30%;
+    padding-inline: 15%;
+}
+.data_cubes.new_table{
+    background-color: #F0F2F5;
+    text-align: center;
+    padding-top: 10%;
+    padding-left: 0%;
+    padding-bottom: 2%;
+}
+.create_new_table-text{ 
+    font-size: 14px;
+    font-weight: lighter;
+    color: #434343;
+}
+
+/* tasks */
+.container.tasks, .container.createTask{
+    display: flex;
+    flex-direction: column;  
+
+    margin-top: 2.5%;
+    padding-inline: 15%;
+}
+
+.data_cubes.tasks{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    text-align: left;
+    padding-bottom: 0%;
+    padding-top: 1%;
+
+    margin: 1%;
+
+    background: #FAAD41; 
+    border-radius: 2px;
+}
+.new-task-form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.new-task-button{
+    width: 100%;
+}
+.task-button{
+    margin-right: 5%;
+    cursor: pointer;
+}
+/* .tasks-logo{
+} */
+.home-button{
+    background-color: #FD6600;
+    font-weight: lighter;
+    border: 1px;
+    border-radius: 10px;
+    margin-top: 2%;
+    padding-inline: 5%;
+}
+.home-button:hover{
+    color: #FD6600;
+    border-radius: 10px;
+    border: 1px;
+    border-style: solid;
+    border-color: #FD6600;
+    background-color: #ffffff;
+}
+.close_task_modal{
+    display: none;
+}
+.container-home-info{
+    display: none;
+}
+
+/* invitations */
+.container-invitations-data{
+    display: grid;
+    grid-template-columns: max-content min-content min-content;
+    text-align: center;
+    gap: 2%;
+    
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-inline: 5%;
+}
+.invitations-data{
+    margin-top: 20%;
+}
+.invitation-from{
+    padding-top: 6%;
+}
+
+
+.footer{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    /* background-color: #FAAD41; */
+    
+    color: #444444;
+    text-align: center;
+}
+
+/* points of responsibility */
+/* phone */
+@media (min-width: 320px) and (max-width: 599px){ 
+    html,
+    body{
+        background-color: #f1f1f1;
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    .background-image-rightone{
+        display: none;
+    }
+
+    /* bases */
+    .container-fluid.home{
+        position: relative;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        width: 100%;
+        height: 100%;
+        margin-top: 2%;
+        padding-inline: 0px;
+    }
+    .container-data{
+        padding-inline: 20px;
+        padding-top: 5px;
+        padding-bottom: 30px;
+    }
+    
+    /* home */
+    .container-home-data{
+        display: flex;
+        flex-direction: column;
+        
+        margin-top: 5%;
+        padding-inline: 10%;
+    }
+    .container-home-info{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        text-align: center;
+        
+        padding-top: 4%;
+        padding-inline: 0%;
+    }
+    .home-info-section{
+        margin-top: 20%;
+        background-color: #F8F8F8;
+        height: 87.5%;
+        width: 100%;
+    }
+    .slogan{
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .platform-info{
+        font-size: 13px;
+        font-weight: lighter;
+    }
+    .tasks-logo{
+        display: none;
+    }
+    .home-button{
+        background-color: #FD6600;
+        font-size: 10px;
+        font-weight: normal;
+        border: 1px;
+        border-radius: 10px;
+        margin-top: 2%;
+        padding-inline: 5%;
+        width: 30%;
+    }
+    .group-icon, .task-icon, .monoroom-icon{
+        object-fit: contain;
+        width: 30%;
+        height: 30%;
+    }
+    .home-info-text{
+        font-size: 15px;
+        font-weight: lighter;
+    }
+    .block-groups, .block-tasks, .block-rooms{
+        font-size: 24px;
+        font-weight: 275;
+    }
+    .block-groups{ 
+        order: 2;
+    }
+    .tasks-icon{
+        object-fit: contain;
+        width: 65%;
+        height: 65%;
+    }
+
+    /* rooms */
+    .workspace-nav{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        margin-top: 2.5%;
+        margin-right: 18%;
+        margin-bottom: -5%;
+        padding-inline: 15%;
+
+        font-size: 14px;
+    }
+    .container-monorooms-data{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        text-align: center;
+        gap: 10%;
+        
+        margin-right: 30%;
+        padding-inline: 15%;
+    }
+    .data_cubes{
+        text-align: left;
+        font-size: 14px;
+        padding-top: 2%;
+        padding-left: 5%;
+        padding-bottom: 10%;
+        cursor: pointer;
+
+        background: #FAAD41; 
+        border-radius: 2px;
+        width: 100%;
+        height: 100%;
+    }
+    .data_cubes.new_room{
+        background-color: #F8F8F8;
+        text-align: center;
+        padding-top: 10%;
+        padding-left: 0%;
+        padding-bottom: 2%;
+    }
+    .create_new_room-text{
+        font-size: 13px;
+        font-weight: lighter;
+        color: #434343;
+    }
+}
+/* tablet */
+@media (min-width: 600px) and (max-width: 800px){ 
+    html,
+    body{
+        background-color: #FAAD41;
+        height: 100%;
+        width: 100%;
+    }
+    /* bases */
+    .container-fluid.home{
+        position: relative;
+        background: #ffffff;
+        box-shadow: 4px 3px 2.5px rgba(0, 0, 0, 0.13);
+        border: 1px solid #dddddd;
+        border-radius: 10px;
+        width: 95%;
+        height: 98%;
+        margin-top: 2%;
+        padding-inline: 0px;
+    }
+    /* home */
+    .container-home-data{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        text-align: center;
+        justify-content: space-around;
+        
+        margin-top: 5%;
+        padding-inline: 10%;
+    }
+    .container-home-info{
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        
+        margin-top: 1%;
+        padding-top: 4%;
+        padding-inline: 0%;
+    }
+    .home-info-section{
+        background-color: #F8F8F8;
+        height: 22%;
+        width: 100%;
+    }
+    .slogan{
+        font-size: 34px;
+        font-weight: bold;
+    }
+    .platform-info{
+        font-size: 15px;
+        font-weight: lighter;
+    }
+    .home-button{
+        background-color: #FD6600;
+        font-weight: lighter;
+        border: 1px;
+        border-radius: 10px;
+        margin-top: 2%;
+        padding-inline: 5%;
+    }
+    .home-info-text{
+        font-size: 15px;
+        font-weight: lighter;
+    }
+    .block-groups, .block-tasks, .block-rooms{
+        font-size: 24px;
+        font-weight: 275;
+    }
+    .tasks-icon{
+        object-fit: contain;
+        width: 75%;
+        height: 75%;
+    }
+
+    /* rooms */
+    .workspace-nav{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        margin-top: 2.5%;
+        margin-right: 18%;
+        margin-bottom: -3%;
+        padding-inline: 15%;
+        font-size: 15px;
+    }
+    .container-monorooms-data{
+        display: grid;
+        grid-template-columns: 34% 34% 34%;
+        text-align: center;
+        gap: 10%;
+        
+        margin-right: 30%;
+        padding-inline: 15%;
+    }
+    .data_cubes{
+        text-align: left;
+        font-size: 14px;
+        padding-top: 2%;
+        padding-left: 5%;
+        padding-bottom: 10%;
+        cursor: pointer;
+
+        background: #FAAD41; 
+        border-radius: 2px;
+        width: 100%;
+        height: 100%;
+    }
+    .data_cubes.new_room{
+        background-color: #F8F8F8;
+        text-align: center;
+        padding-top: 10%;
+        padding-left: 0%;
+        padding-bottom: 2%;
+    }
+    .create_new_room-text{
+        font-size: 14px;
+        font-weight: lighter;
+        color: #434343;
+    }
+}
+
+.no_select {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+  }

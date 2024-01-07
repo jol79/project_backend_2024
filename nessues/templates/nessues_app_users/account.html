@@ -1,0 +1,44 @@
+{% extends "base_account.html" %}
+
+
+{% block content %}
+    <div class="account-page">
+
+        <!-- Links -->
+        <div class="account-links">
+            <a class="btn btn-outline-secondary rounded-pill" href="/">Home</a>
+            <a class="btn btn-outline-secondary rounded-pill" href="/logout">Logout</a>
+        </div>
+
+        <!-- User img -->
+        <div class="account-image">
+            <img src="#" alt="profile image {{ request.user }}">
+        </div>
+        
+        <!-- Username -->
+        <div class="account-username">
+            <p>{{ request.user }}</p>
+        </div>
+
+        <!-- Groups/Rooms links -->
+        <div class="account-gr-links">
+            <a class="btn btn-outline-secondary rounded-pill" style="margin-right: 2%;" href="/groups">Groups</a>
+            <a class="btn btn-outline-secondary rounded-pill" style="margin-left: 2%;" href="/rooms">Mono</a>
+        </div>
+
+        <!-- Groups/Rooms statistics -->
+        <div class="account-statistics">
+            You are participating in: <strong>{{ groups_stats }}</strong> Groups |
+            {% if invitations_received.count == 1 %}
+                <a href="/invitations" style="color: green;">+{{ invitations_received.count }} Invitation</a>
+            {% elif invitations_received.count > 1 %}
+                <a href="/invitations" style="color: green;">+{{ invitations_received.count }} Invitations</a>
+            {% else %}
+                <a href="/invitations" style="color: gray;">Invitations</a>
+            {% endif %}
+            <br>
+            You have already created <strong>{{ rooms_stats }}</strong> Mono rooms
+        </div>
+
+    </div>
+{% endblock content %}

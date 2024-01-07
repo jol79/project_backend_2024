@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    <div class="container-home-data">
+
+        <div class="slogan-block">
+            <div class="slogan">
+                Massive tasks
+                <br>
+                Simple solutions
+            </div>
+            <div class="platform-info">
+                Cooperate with other users
+                <br>
+                and become more productive together
+            </div>
+            <button type="button" class="btn btn-primary home-button">Register now</button>
+        </div>
+        
+        <div class="tasks-logo">
+            <img src="../../static/img/TasksLogo.svg" id="tasks-icon" class="tasks-icon">
+        </div>
+        
+    </div>
+    <section class="home-info-section">
+        <div class="container-home-info">
+            <div class="block-groups">
+                <img src="../../static/img/Group-icon-tablets.svg" id="groups-icon-tablets" class="group-icon"><br>
+                <b>Groups</b>
+                <br>
+                <p class="home-info-text">Cooperate with other users
+                and become more productive together</p>
+            </div>
+            <div class="block-tasks">
+                <img src="../../static/img/Task-icon-tablets.svg" id="tasks-icon-tablets" class="task-icon"><br>
+                <b>Tasks</b>
+                <br>
+                <p class="home-info-text">Stylize as you want - add sticker 
+                to each task for better association 
+                of what to do</p>
+            </div>
+            <div class="block-rooms">
+                <img src="../../static/img/User-icon-tablets.svg" id="monorooms-icon-tablets" class="monoroom-icon"><br>
+                <b>Mono rooms</b>
+                <br>
+                <p class="home-info-text">If you prefer privacy mono
+                rooms will give you this opportunity</p>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

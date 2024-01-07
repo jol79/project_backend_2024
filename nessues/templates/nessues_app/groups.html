@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+
+
+{% block content %}
+
+    <div class="workspace-nav">
+        <p>List of groups you are participating in</p>
+    </div>
+
+    <hr style="width: 53%; margin-left: 14.5%;">
+
+    <div class="container-groups-data">
+        {% for data in available_groups %}
+            <a href="{% url 'tables' redirected_from='group' key_id=data.group.id %}">
+                <div class="data_cubes groups">
+                    {% if data.role == 1 %}
+                        <div class="group-name">
+                            {{ data.group.name }}
+                        </div>
+                        <div class="group-role">
+                            role: <b>owner</b>
+                        </div>
+                    {% elif data.role == 2 %}
+                        <div class="group-name">
+                            {{ data.group.name }}
+                        </div>
+                        <div class="group-role">
+                            role: <b>admin</b>
+                        </div>
+                    {% elif data.role == 3 %}
+                        <div class="group-name">
+                            {{ data.group.name }}
+                        </div>
+                        <div class="group-role">
+                            role: <b>common user</b>
+                        </div>
+                    {% endif %}
+                </div>
+            </a>
+        {% endfor %}
+        <a data-toggle="modal" data-target="#createGroupModal" class="createGroup">
+            <div class="data_cubes new_group">
+                <p class="create_new_group-text">Create group</p>
+            </div>
+        </a>
+
+        <!-- Modal create new group form -->
+        <div class="create_group_modal">
+            <div class="modal fade" id="createGroupModal" tabindex="-1" role="dialog" aria-labelledby="createGroupForm" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalLabel">New group</h5>
+                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+                        </button>
+                    </div>
+
+                    <div class="modal-body" style="text-align: center;">
+                        <form method="POST">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                {% render_field create.user name="id_user" %}
+                            </div>
+                            <div class="form-group-name">
+                                <label>{{ create.name.label }}</label>
+                                {% render_field create.name name="id_name" %}
+                            </div>
+                            <div class="form-group">
+                                <label>{{ create.description.label }}</label>
+                                {% render_field create.description name="id_description" %}
+                            </div>
+                            
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button class="btn btn-primary" type="submit">Create group</button>
+
+                        </form>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock content %}
